@@ -1,0 +1,19 @@
+﻿<script type="text/javascript" src="../../Scripts/angular.min.js"></script>
+<script src="../../Scripts/Modules/TestPageController.js"></script>
+
+@{
+    ViewBag.Title = "TestPage";
+}
+<div id="body">
+    <h2>TestPage1321 for days </h2>
+
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <button class="success" ng-click="getValuesFromApi()">>Get Values from Web Api</button>
+        <p>Name : <input type="text" ng-model="name"></p>
+        <h1>Hello {{name}}</h1>
+        <h1>{{yo}}</h1>
+    </div>
+
+    
+</div>
