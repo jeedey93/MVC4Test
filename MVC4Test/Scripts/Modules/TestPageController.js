@@ -12,5 +12,8 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
                 alert("error");
             });
     }
+    $scope.clearValuesApi = function() {
+        $scope.yo = "";
+    }
 
 }]);
