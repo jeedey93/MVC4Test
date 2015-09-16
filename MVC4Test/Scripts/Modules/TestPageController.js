@@ -4,9 +4,9 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.lastName = "Doe";
     $scope.yo = "";
 
-    $scope.sortType = 'name'; // set the default sort type
+    $scope.sortType = 'Category'; // set the default sort type
     $scope.sortReverse = false;  // set the default sort order
-    $scope.searchFish = '';     // set the default search/filter term
+    $scope.searchAsset = '';     // set the default search/filter term
 
     $scope.getValuesFromApi = function() {
         $http.get('http://localhost:6212/api/values').

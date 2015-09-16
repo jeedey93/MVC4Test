@@ -15,19 +15,52 @@
         <div class="alert alert-info">
             <p>Sort Type: {{ sortType }}</p>
             <p>Sort Reverse: {{ sortReverse }}</p>
-            <p>Search Query: {{ searchFish }}</p>
+            <p>Search Query: {{ searchAsset }}</p>
         </div>
+
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                    <input type="text" class="form-control" placeholder="Search da Fish" ng-model="searchAsset">
+                </div>
+            </div>
+        </form>
 
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <td><a href="#" ng-click="sortType = 'name'">ID</a></td>
-                    <td>CATEGORY</td>
-                    <td>NAME</td>
-                    <td>PRICE</td>
+                    <td>
+                        <a href="#" ng-click="sortType = 'Id'; sortReverse = !sortReverse">
+                            <span ng-show="sortType == 'Id' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                            <span ng-show="sortType == 'Id' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                            ID
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" ng-click="sortType = 'Category'; sortReverse = !sortReverse">
+                            CATEGORY
+                            <span ng-show="sortType == 'Category' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                            <span ng-show="sortType == 'Category' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" ng-click="sortType = 'Name'; sortReverse = !sortReverse">
+                            NAME
+                            <span ng-show="sortType == 'Name' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                            <span ng-show="sortType == 'Name' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" ng-click="sortType = 'Price'; sortReverse = !sortReverse">
+                            PRICE
+                            <span ng-show="sortType == 'Price' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                            <span ng-show="sortType == 'Price' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                        </a>
+                    </td>
                 </tr>
             </thead>
-            <tr ng-repeat="asset in yo orderBy:sortType:sortReverse">
+            <tr ng-repeat="asset in yo | orderBy:sortType:sortReverse | filter:searchAsset">
                 <td>{{asset.Id}}</td>
                 <td>{{asset.Category}}</td>
                 <td>{{asset.Name}}</td>
@@ -48,7 +81,7 @@
 
 
 
-        <!-- Modal -->z
+        <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
@@ -81,8 +114,5 @@
             </div>
         </div>
 
-
     </div>
-
-    
 </div>
