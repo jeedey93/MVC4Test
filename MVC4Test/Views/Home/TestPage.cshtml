@@ -11,21 +11,76 @@
         <button class="btn btn-warning" ng-click="clearValuesApi()">Clear Values</button>
         <p>Name : <input type="text" ng-model="name"></p>
         <h1>Hello {{name}}</h1>
-        <h1>{{yo}}</h1>
 
-        <ul>
-            <li ng-repeat="asset in yo">
-                ID : {{asset.Id}} <br />
-                CATEGORY : {{asset.Category}}<br />
-                NAME : {{asset.Name}}<br />
-                PRICE : {{asset.Price}}<br />
-            </li>
-        </ul>
+        <div class="alert alert-info">
+            <p>Sort Type: {{ sortType }}</p>
+            <p>Sort Reverse: {{ sortReverse }}</p>
+            <p>Search Query: {{ searchFish }}</p>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td><a href="#" ng-click="sortType = 'name'">ID</a></td>
+                    <td>CATEGORY</td>
+                    <td>NAME</td>
+                    <td>PRICE</td>
+                </tr>
+            </thead>
+            <tr ng-repeat="asset in yo orderBy:sortType:sortReverse">
+                <td>{{asset.Id}}</td>
+                <td>{{asset.Category}}</td>
+                <td>{{asset.Name}}</td>
+                <td>{{asset.Price}}</td>
+                <td>
+                    <button class="btn" ng-click="setEditAssetId(asset.Id)" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit
+                    </button>
+                </td>
+            </tr>
+        </table>
 
         <h2>Search by ID</h2>
         <input type="text" id="prodId" size="5" ng-model="valueId" />
         <input type="button" value="Search" ng-click="findValue(valueId)" />
-        <p id="product" />
+        <p id="product"/>
+        <div>This is the asset you have been looking for {{singleValue}}</div>
+
+
+
+        <!-- Modal -->z
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Id : <input type="text" ng-model="singleValue.Id">
+                        </p>
+                        <p>
+                            Category : <input type="text" ng-model="singleValue.Category">
+                        </p>
+                        <p>
+                            Name : <input type="text" ng-model="singleValue.Name">
+                        </p>
+                        <p>
+                            Price : <input type="text" ng-model="singleValue.Price">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
     </div>
 

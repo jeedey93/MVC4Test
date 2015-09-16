@@ -26,12 +26,12 @@ namespace MVC4Test.Controllers
         private static List<Asset> initList2()
         {
             var ret = new List<Asset>();
-            ret.Add(new Asset() { Id = 1 , Category = "Inventory", Name = "ACable", Price = 10});
-            ret.Add(new Asset() { Id = 2, Category = "Inventory", Name = "BCable", Price = 32 });
-            ret.Add(new Asset() { Id = 3, Category = "Inventory", Name = "CCable", Price = 54 });
-            ret.Add(new Asset() { Id = 4, Category = "Inventory", Name = "DCable", Price = 160 });
-            ret.Add(new Asset() { Id = 5, Category = "Inventory", Name = "ECable", Price = 75 });
-            ret.Add(new Asset() { Id = 6, Category = "Inventory", Name = "FCable", Price = 15 });
+            ret.Add(new Asset() { Id = 1 , Category = "Inventory1", Name = "ACable1", Price = 10});
+            ret.Add(new Asset() { Id = 2, Category = "Inventory2", Name = "BCable2", Price = 32 });
+            ret.Add(new Asset() { Id = 3, Category = "Inventory3", Name = "CCable3", Price = 54 });
+            ret.Add(new Asset() { Id = 4, Category = "Inventory4", Name = "DCable4", Price = 160 });
+            ret.Add(new Asset() { Id = 5, Category = "Inventory5", Name = "ECable5", Price = 75 });
+            ret.Add(new Asset() { Id = 6, Category = "Inventory6", Name = "FCable6", Price = 15 });
             return ret;
         }
 
