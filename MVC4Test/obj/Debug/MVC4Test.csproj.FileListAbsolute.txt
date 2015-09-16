@@ -59,7 +59,6 @@ c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\bin\ko\S
 c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\bin\ru\System.Spatial.resources.dll
 c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\bin\zh-Hans\System.Spatial.resources.dll
 c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\bin\zh-Hant\System.Spatial.resources.dll
-c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\obj\Debug\MVC4Test.csprojResolveAssemblyReference.cache
 c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\obj\Debug\MVC4Test.dll
 c:\users\justin\documents\visual studio 2013\Projects\MVC4Test\MVC4Test\obj\Debug\MVC4Test.pdb
 C:\Users\Justin\Documents\Visual Studio 2013\Projects\MVC4Test\MVC4Test\bin\EntityFramework.SqlServer.dll

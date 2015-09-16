@@ -14,7 +14,6 @@ namespace MVC4Test.Controllers
         private static List<string> data = initList();
         private static List<Asset> assets = initList2();
 
-
         private static List<string> initList()
         {
             var ret = new List<string>();
