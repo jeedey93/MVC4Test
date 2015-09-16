@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC4Test.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,6 +12,8 @@ namespace MVC4Test.Controllers
     {
 
         private static List<string> data = initList();
+        private static List<Asset> assets = initList2();
+
 
         private static List<string> initList()
         {
@@ -20,16 +23,28 @@ namespace MVC4Test.Controllers
             return ret;
         }
 
-        // GET api/values
-        public IEnumerable<string> Get()
+        private static List<Asset> initList2()
         {
-            return data;
+            var ret = new List<Asset>();
+            ret.Add(new Asset() { Id = 1 , Category = "Inventory", Name = "ACable", Price = 10});
+            ret.Add(new Asset() { Id = 2, Category = "Inventory", Name = "BCable", Price = 32 });
+            ret.Add(new Asset() { Id = 3, Category = "Inventory", Name = "CCable", Price = 54 });
+            ret.Add(new Asset() { Id = 4, Category = "Inventory", Name = "DCable", Price = 160 });
+            ret.Add(new Asset() { Id = 5, Category = "Inventory", Name = "ECable", Price = 75 });
+            ret.Add(new Asset() { Id = 6, Category = "Inventory", Name = "FCable", Price = 15 });
+            return ret;
+        }
+
+        // GET api/values
+        public IEnumerable<Asset> Get()
+        {
+            return assets;
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Asset Get(int id)
         {
-            return data[id];
+            return assets.Where(x=>x.Id == id).SingleOrDefault();
         }
 
         // POST api/values
@@ -47,7 +62,7 @@ namespace MVC4Test.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-            data.RemoveAt(id);
+            assets.RemoveAt(id);
         }
     }
 }

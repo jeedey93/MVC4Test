@@ -16,4 +16,13 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.yo = "";
     }
 
+    $scope.findValue = function(id){
+        $http.get('http://localhost:6212/api/values'+'/'+id).
+           success(function (data, status, headers, config) {
+               $scope.yo = data;
+           }).
+           error(function (data, status, headers, config) {
+               alert("error");
+           });
+    }
 }]);
